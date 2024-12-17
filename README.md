@@ -3,7 +3,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/csad-unsupervised-component-segmentation-for/anomaly-detection-on-mvtec-loco-ad)](https://paperswithcode.com/sota/anomaly-detection-on-mvtec-loco-ad?p=csad-unsupervised-component-segmentation-for)
 
 
-This is the official implementation of the paper "CSAD: Unsupervised Component Segmentation for Logical Anomaly Detection" accepted by BMVC 2024.
+This is the official implementation of the paper "CSAD: Unsupervised Component Segmentation for Logical Anomaly Detection" accepted by [BMVC 2024](https://bmvc2024.org/proceedings/854/).
 ### (0919) Update: CSAD now supports TensorRT!
 ### (0911) Update: CSAD now supports ONNX, OpenVINO and TFLite!
 

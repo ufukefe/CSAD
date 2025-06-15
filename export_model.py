@@ -579,6 +579,14 @@ if __name__ == "__main__":
     categories = ["breakfast_box","juice_bottle","pushpins","screw_bag","splicing_connectors",]#
     aucs = []
     for category in categories:
+        ### MODIFICATION START ###
+        # Pre-flight check to see if the dataset directory for the category exists.
+        dataset_path = os.path.join("./datasets/mvtec_loco_anomaly_detection", category)
+        if not os.path.isdir(dataset_path):
+            print(f"--- ⚠️  Warning: Dataset for category '{category}' not found at '{dataset_path}'. Skipping. ---")
+            continue
+        ### MODIFICATION END ###
+
         if args.inference_only:
             if args.format == "onnx":
                 auc = inference_onnx(category,)
@@ -604,5 +612,6 @@ if __name__ == "__main__":
             elif args.format == "tensorrt":
                 onnx2trt(category)
 
-    if args.inference_only:
-        print("Total Average AUC:",np.mean(aucs))
+    if args.inference_only and aucs:
+        print("\n--- Summary ---")
+        print(f"Total Average AUC for processed categories: {np.mean(aucs):.3f}")

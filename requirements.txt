@@ -124,7 +124,7 @@ tensorrt-cu12==10.4.0
 tensorrt-cu12-bindings==10.4.0
 tensorrt-cu12-libs==10.4.0
 termcolor==2.4.0
-tf_nightly==2.18.0.dev20240910
+# tf_nightly==2.18.0.dev20240910
 threadpoolctl==3.5.0
 tifffile==2024.8.30
 timm==1.0.9

@@ -4,7 +4,8 @@ import torch
 import glob
 import torch
 import random
-from datasets import load_dataset as hf_load_dataset
+# The problematic import is removed from here.
+# from datasets import load_dataset as hf_load_dataset 
 from torchvision import transforms
 import os
 from PIL import Image
@@ -162,6 +163,9 @@ class MVTecLOCODataset(Dataset):
 class ImageNetDataset(Dataset):
     def __init__(self,transform=None,):
         super().__init__()
+        # The import is now moved inside the method where it is used,
+        # resolving the name conflict without affecting other scripts.
+        from datasets import load_dataset as hf_load_dataset
         print("Loading ImageNet")
         self.dataset = hf_load_dataset('Maysee/tiny-imagenet', split='train')
         # self.dataset = self.dataset['train']
@@ -177,7 +181,3 @@ class ImageNetDataset(Dataset):
         image = self.transform(image).cuda()
         # print(image.shape)
         return image
-    
-
-
-
